@@ -20,7 +20,7 @@ def selenium_server_url(version):
     '''
     Get the SELENIUM server jar URL.
     '''
-    return 'http://selenium.googlecode.com/files/%s' % selenium_server_bn(version)
+    return 'http://selenium-release.storage.googleapis.com/%s/%s/' % (version[:-2], selenium_server_bn(version))
 
 def selenium_server_path(version=__selenium_version__):
     '''
@@ -75,4 +75,3 @@ def download(version, force=False):
             raise e
         # Close the file descriptor if download is successful
         fd.close()
-
